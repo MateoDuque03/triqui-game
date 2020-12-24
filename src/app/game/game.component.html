@@ -1,0 +1,27 @@
+<div class="container container-box">
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            <h2>Game</h2>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            <div class="col-md-12">
+                <section>
+                    <div class="row" *ngFor="let row of [1, 2, 3]">
+                        <button *ngFor="let col of [1, 2, 3]" class="square" (click)="TicTacToe(row-1, col-1)">
+                            {{ positions[row-1][col-1] }}
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            <button class="btn btn-success clear-game" (click)="Reset()">Limpiar Juego</button>
+        </div>
+    </div>
+</div>
+
+<app-modal-win [messageWin]="message"></app-modal-win>
